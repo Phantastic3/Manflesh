@@ -23,8 +23,11 @@ class Choice(models.Model):
 
 class List(models.Model):
     name = models.CharField(max_length=100)
-
+    def __str__(self):
+        return self.name
 
 class Word(models.Model):
     list = models.ForeignKey(List, on_delete=models.CASCADE)
     text = models.CharField(max_length=30)
+    def __str__(self):
+        return self.text
